@@ -1,0 +1,154 @@
+<div class="container">
+  <h1>Pipes</h1>
+  <hr>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Variable</th>
+        <th scope="col">Pipe</th>
+        <th scope="col">Producto</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <th> {{ nombre }} </th>
+        <td> uppercase </td>
+        <td> {{ nombre | uppercase }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ nombre }} </th>
+        <td> lowercase </td>
+        <td> {{ nombre | lowercase }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ nombre }} </th>
+        <td> slice:3 </td>
+        <td> {{ nombre | slice:3 }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ nombre }} </th>
+        <td> slice:0:3 </td>
+        <td> {{ nombre | slice:0:3 }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ arreglo }} </th>
+        <td> slice:0:5 </td>
+        <td> {{ arreglo | slice:0:5 }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ PI }} </th>
+        <td> number </td>
+        <td> {{ PI | number }} </td>
+      </tr>
+      
+
+      <tr>
+        <th> {{ PI }} </th>
+        <td> number:'3.0-0' </td>
+        <td> {{ PI | number:'3.0-0' }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ PI }} </th>
+        <td> number:'1.0-2' </td>
+        <td> {{ PI | number:'1.0-2' }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ a }} </th>
+        <td> percent </td>
+        <td> {{ a | percent }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ a }} </th>
+        <td> percent:'2.2-2' </td>
+        <td> {{ a | percent:'2.2-2' }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ salario }} </th>
+        <td> currency </td>
+        <td> {{ salario | currency }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ salario }} </th>
+        <td> currency:'EUR' </td>
+        <td> {{ salario | currency:'EUR' }} </td>
+      </tr>
+  
+      <tr>
+        <th> {{ salario }} </th>
+        <td> currency:'EUR':true </td>
+        <td> {{ salario | currency:'EUR':true }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ valorDePromesa }} </th>
+        <td> async </td>
+        <td> {{ valorDePromesa | async }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ fecha }} </th>
+        <td> date </td>
+        <td> {{ fecha | date }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ nombre2 }} </th>
+        <td> capitalizado (pipe personalizado) </td>
+        <td> {{ nombre2 | capitalizado }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ nombre2 }} </th>
+        <td> capitalizado:false (pipe personalizado) </td>
+        <td> {{ nombre2 | capitalizado:false }} </td>
+      </tr>
+
+      <tr>
+        <th> {{ nombre }} </th>
+        <td> contrasena:{{ activar }} (pipe personalizado) 
+        <br>
+        <button (click)="activar = !activar"
+        type="button"
+        class="btn btn-outline-primary">Activar/Desactivar</button></td>
+
+        <td> {{ nombre | contrasena:activar }} </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+
+  <h4>Slice</h4>
+  <ul>
+    <li *ngFor="let item of arreglo | slice:5:20"> {{ item }} </li>
+  </ul>
+
+  <h4>JSon - simple, el pipe es heroe | json  </h4>
+  <hr>
+  {{ heroe | json }}
+  <br><br>
+  <h4>JSon</h4>
+  <hr>
+  <p>Con la etiqueta 'pre' de bootstrap 4 el json queda mejor</p>
+  <pre>
+    {{ heroe | json }}
+  </pre>
+
+
+  <h4>Youtube <small>video</small></h4>
+  <hr>
+
+  <iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
