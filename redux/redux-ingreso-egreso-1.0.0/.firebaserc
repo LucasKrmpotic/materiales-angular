@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "testoauth-34abe": {
+      "hosting": {
+        "ingresoEgreso": [
+          "testoauth-34abe"
+        ]
+      }
+    },
+    "ingresoegreso-4eb93": {
+      "hosting": {
+        "ingresoEgreso": [
+          "ingresoegreso-4eb93"
+        ]
+      }
+    }
+  }
+}
